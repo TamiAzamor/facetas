@@ -1,0 +1,9 @@
+                
+library(ggplot2)
+
+micos <- read.csv("micos_fake.csv", header=T, sep=",", dec=",") 
+
+head(micos)
+
+
+ggplot(data=micos, aes(x=tempo, y=Spots, fill=grupo)) + geom_histogram(binwidth=10,stat="identity") +facet_grid(grupo~., scales="free") + scale_color_brewer(palette="Dark2")
